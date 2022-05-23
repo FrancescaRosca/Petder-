@@ -1,36 +1,34 @@
 import Header from "./Header";
-import CreateAccount from "./CreateAccount";
-import { useState } from "react";
-import Authentification from "./Authentification";
+import { Link } from 'react-router-dom';
+
+
 
 const Home = () => {
 
-    const [showAuth, setShowAuth] = useState(false);
-
-
-    //using this so the botton change text when the user is logged in or out
-    const authToken = false;
-
     const handleClick = () => {
         console.log("clicked!");
-        //when the botton is clicked it displays the Authentification box
-        setShowAuth(true);
     }
     return (
         
         <div className="overlay">
-        <Header setShowAuth={setShowAuth}/>
-        <div className="home">
-            <h1 className="title">Give true love a chance!</h1>
-            <button className="primary-button" onClick={handleClick}>
-                {authToken ? 'Log Out' : 'Create Account'}
-            </button>
+        <Header />
+            <div className="home">
+                <h1 className="title">Give true love a chance!  </h1>
+                <Link to="/createaccount">
+                <button className="primary-button" onClick={handleClick}>
+                    CREATE ACCOUNT
+                </button>
+                </Link>
+                <Link to="/addpets">
+                <button className="primary-button" onClick={handleClick}>
+                    ADD PETS
+                </button>
+                </Link>
+                
 
-            {showAuth && 
-                (<Authentification setShowAuth={setShowAuth}/>
-            )}
+            
 
-        </div>
+            </div>
         </div>
     )
 }

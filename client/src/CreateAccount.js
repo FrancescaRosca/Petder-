@@ -1,16 +1,12 @@
-import { useState } from "react";
 import Header from "./Header";
 
 
 const CreateAccount = () => {
     return (
         <div>
-            <Header
-                setShowAuth={() => {}}
-                showAuth={false}
-            />    
+            <Header />    
             <div className="create-account">
-                <h2>CREATE ACCOUNT</h2>
+                <h2 className="titleaccount">CREATE ACCOUNT</h2>
 
                 <form>
                     <section>
