@@ -1,7 +1,5 @@
 const Header = () => {
 
-    
-
     return (
 
         <nav>
