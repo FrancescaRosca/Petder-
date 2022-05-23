@@ -27,16 +27,19 @@ const AddNewPets = () => {
 
     const [pets, setPets] = useState(initialPets)
 
-    const [newPet, setNewPet] = useState("")
+    const initialPetState = {petName: "", petType: "", image: ""}
+    const [newPet, setNewPet] = useState(initialPetState)
 
     const handleChange = (event) => {
-        setNewPet(event.target.value)
+        console.log(event.target.name)
+        setNewPet(state => ({...state, [event.target.name]: event.target.value}))
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newPets = {petName: newPet, petType: "", image: images.push()}
-        setPets((prevPets) => [...prevPets, newPets])
+        
+        setPets((prevPets) => [...prevPets, newPet])
+        setNewPet(initialPetState)
     }
 
     return (
@@ -45,22 +48,22 @@ const AddNewPets = () => {
             <h1>Add a new pet</h1>
             <form onSubmit={handleSubmit}>
                 <label>Pet Name</label>
-                <input value={initialPets.petName} onChange={(e) => handleChange(e)}/>
+                <input value={newPet.petName} name="petName" onChange={(e) => handleChange(e)}/>
 
                 <label>Pet Type</label>
-                <input value={initialPets.petType} onChange={(e) => handleChange(e)}/>
+                <input value={newPet.petType} name="petType" onChange={(e) => handleChange(e)}/>
 
                 <label>Pet Photo</label>
-                <input value={initialPets.image} onChange={(e) => handleChange(e)}/>
+                <input value={newPet.image} name="image" onChange={(e) => handleChange(e)}/>
 
 
                 <button className="add-button" type="submit">Add</button>
             </form>
             
             <div className="pet-container">
-                {pets.map((element) => {
+                {pets.map((element, index) => {
                     return(
-                        <div className="pet-display" key={element}>
+                        <div className="pet-display" key={index}>
                             <h3>{element.petName}</h3>
                             <p>{element.petType}</p>
                             <img src={element.image} />

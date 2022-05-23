@@ -1,9 +1,6 @@
-const Header = ({setShowAuth}) => {
+const Header = () => {
 
-    const handleClick = () => {
-        //now the box can also be seen when the Log In button is clicked
-        setShowAuth(true);
-    }
+    
 
     return (
 
@@ -12,7 +9,7 @@ const Header = ({setShowAuth}) => {
                 <img className="logo" src="https://www.linkpicture.com/q/PETDER.png" />
             </div>
 
-            <button className="header-button" onClick={handleClick}>
+            <button className="header-button">
                 Log In
             </button>
         </nav>

@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# What is this all about?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created so those who want to adopt a new family member can find their best match between all kind of animals living in shelters. 
+It's a "Tinder" version that helps you find your perfect "match" so you can give true love a chance!
 
 ## Available Scripts
 

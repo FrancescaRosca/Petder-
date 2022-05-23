@@ -5,15 +5,21 @@ import images from './PetImages.js';
 
 const PetCards = () => {
 
+    const [width, setWidth] = useState(0);
+    const carroussel = useRef();
+
+    useEffect(() => {
+        setWidth(carroussel.current.scrollWidth - carroussel.current.offsetWidth);
+    }, []);
 
     return (
         
-        <motion.div className="carroussel">
+        <motion.div ref={carroussel} className="carroussel" whileTap={"grabbing"}>
             <Header />
             <h1 className="titlepets">Pets Looking for Love</h1>
             <motion.div 
                 drag="x" 
-                dragConstraints={{ right: 0, left: 30}}
+                dragConstraints={{ right: 0, left: -width}}
                 className="inner-carroussel"
             >
                 {images.map((image) => {
