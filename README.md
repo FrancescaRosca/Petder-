@@ -25,21 +25,4 @@ More info: https://www.framer.com/docs/introduction/
 
 You will need this to get the photo carrussel working. 
 
-## What else should I know?
-
-Due to technical issues, the app does not have a Data Base or an API.
-
-It also have 2 types os users: the shelters and the adopters!
-
-## Extra info that's been used to create this
-
-https://www.youtube.com/watch?v=W0bEL93tt4k
-
-https://www.youtube.com/watch?v=Q70IMS-Qnjk&list=PLO_mqJwaLkErfSYa28nKABdCf-0c4hGAT&index=6&t=4475s
-
-https://www.youtube.com/watch?v=DQfeB_FKKkc&t
-
-
-
-_This is a student project that was created at [CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._
 
